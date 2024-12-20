@@ -1,11 +1,7 @@
 name: Build and push Docker images
 
 on:
-  schedule:
-  - cron: '0 7 * * *'
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 env:
   TZ: Asia/Shanghai 
@@ -36,4 +32,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: halcyonazure/lsky-pro-docker:latest
+          tags: getyufelix/lsky-pro-docker:latest

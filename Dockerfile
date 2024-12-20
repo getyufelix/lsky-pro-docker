@@ -7,7 +7,7 @@ RUN apt-get update && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN curl -OL https://github.com/lsky-org/lsky-pro/archive/refs/heads/master.zip \
+RUN curl -OL https://github.com/getyufelix/lsky-pro/archive/refs/heads/master.zip \
     && unzip *.zip \
     && mv ./lsky-pro-master/* ./ \
     && mv ./lsky-pro-master/.env.example ./ \

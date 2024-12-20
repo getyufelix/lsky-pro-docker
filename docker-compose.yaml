@@ -1,7 +1,7 @@
 version: '3'
 services:
   lskypro:
-    image: halcyonazure/lsky-pro-docker:latest
+    image: getyufelix/lsky-pro-docker:latest
     restart: unless-stopped
     hostname: lskypro
     container_name: lskypro
@@ -10,7 +10,7 @@ services:
     volumes:
       - $PWD/web:/var/www/html/
     ports:
-      - "9080:8089"
+      - "8089:8089"
     networks:
       - lsky-net
 
@@ -29,7 +29,7 @@ services:
       - $PWD/mysql/conf:/etc/mysql
       - $PWD/mysql/log:/var/log/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: lAsWjb6rzSzENUYg # 数据库root用户密码，自行修改
+      MYSQL_ROOT_PASSWORD: password # 数据库root用户密码，自行修改
       MYSQL_DATABASE: lsky-data # 可作为"数据库名称/路径"
     networks:
       - lsky-net
